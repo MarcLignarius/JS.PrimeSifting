@@ -6,28 +6,40 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Site Title</title>
+    <title>Prime Sifting</title>
   </head>
   <body>
     <nav
       class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between"
     >
-      <h3>Site Title</h3>
+      <h3>Prime Sifting</h3>
       <h6>
         Marc Davies | <a href="https://github.com/MarcLignarius">GitHub</a> |
         <a href="https://www.linkedin.com/in/marcdaviesriot/">LinkedIn</a>
       </h6>
     </nav>
     <div class="container mt-5">
+      <h3>Instructions</h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        Given a number, write a method that returns all of the prime numbers less than that number using the Sieve of Eratosthenes.
       </p>
+      <p>Here's how the Sieve of Eratosthenes works to find a number up to a given <code>number</code>:</p>
+      <ul class="mb-5">
+        <li>Create a list of numbers from 2 through n: 2, 3, 4, ..., <code>number</code>.</li>
+        <li>Initially, let <code>prime</code> equal 2, the first prime number.</li>
+        <li>Starting from <code>prime</code>, remove all multiples of <code>prime</code> from the list.</li>
+        <li>Increment <code>prime</code> by 1.</li>
+        <li>When <code>number</code> is reached, all the remaining numbers in the list are primes.</li>
+      </ul>
+      <form id ="userInput">
+        <div class="form-group">
+          <label for="userInput">Enter a number:</label>
+          <input id="userInput" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-dark">Show prime numbers</button>
+        <div id="output"></div>
+      </form>
+      </div>
     </div>
     <footer>
       <h6 class="text-center">Thanks for visiting!</h6>
