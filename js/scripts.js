@@ -5,8 +5,10 @@ $(function() {
     console.log("userInput", userInput);
     // Check for empty field
     if (userInput === "") {
-        $("#output").text("Please enter a number.");
+        $("#output").text("This field is required.");
         return false;
+    } else if (isNaN(userInput)) {
+        $("#output").text("Please enter a number.");
     };
   });
 });
