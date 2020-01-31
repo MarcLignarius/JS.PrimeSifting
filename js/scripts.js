@@ -14,26 +14,39 @@ $(function() {
       //If non-empty and numerical, parse userInput
       let number = parseFloat(userInput);
       console.log("number", number);
-      let numArray = createNumArray(number);
-      console.log("numArray", numArray);
-      let primeNumbers = removeNonPrimes(numArray);
-      console.log("primeNumbers", primeNumbers);
+      let primes = sieve(number);
+      $("#output").text(primes);
     }
   });
 
-  function createNumArray(number) {
-    let numArray = [];
-    for (i = 2; i <= number; i++) {
-      numArray.push(i);
-    }
-    return numArray;
-  }
+  function sieve(number) {
+    let bools = [];
+    let primes = [];
 
-  function removeNonPrimes(numArray) {
-    let primeNumbers = [];
-    for (i = 2; i <= numArray.length+1; i++) {
-      primeNumbers.push(i);
+  // generate a list of booleans all set to true initially
+  // the array is indexed from 2 to limit representing all numbers
+  // e.g. [true, true, true, true] = [2, 3, 4, 5]
+    for (let i = 2; i < number; i++) { 
+      bools.push(true);
+    } 
+  
+    // loop from 2 to limit setting the composite numbers to false
+    // we start from 2 because we know 1 is not a prime number
+    for (let i = 2; i < number; i++) {
+      if (bools[i-2]) {
+        for (let j = i*2; j <= number; j += i) {
+          bools[j-2] = false;    
+        }
+      }
     }
-    return primeNumbers;
-  }
+    
+    // now generate the list of primes only where
+    // there is a true value in the bools array
+    for (let p = 0; p < bools.length; p++) {
+      if (bools[p]) { 
+        primes.push(p+2); 
+      }
+    }
+    return primes;
+  } 
 });
