@@ -1,28 +1,24 @@
-# _{Application Name}_
+# _Prime Sifting_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _User enters a number and program returns all of the prime numbers less than that number._
 
 #### By _**Marc Davies**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_The user enters a number and the program uses the Sieve of Eratosthenes to list out all the prime numbers less than that number._
 
 ## Setup/Installation Requirements
 
 * _Clone from GitHub_
 * _Open index.html_
-* _Alternatively, launch https://marclignarius.github.io/projectname_
+* _Alternatively, launch https://marclignarius.github.io/JS.PrimeSifting_
 
 ## Specs
 
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-| Lorem | x | true/false |
-| Lorem | x | true/false |
-| Lorem | x | true/false |
-| Lorem | x | true/false |
-| Lorem | x | true/false |
+| User enters a number, program returns all prime numbers less than that number | 30 |  2, 3, 5, 7, 11, 13, 17, 19, 23, 29 |
 
 ## Known Bugs
 
@@ -34,7 +30,7 @@ _Please contact me via <a href="https://www.linkedin.com/in/marcdaviesriot/">Lin
 
 ## Technologies Used
 
-_HTML, CSS, JS, Bootstrap, jQuery, Atom._
+_HTML, CSS, JS, Bootstrap, jQuery_
 
 ### License
 
