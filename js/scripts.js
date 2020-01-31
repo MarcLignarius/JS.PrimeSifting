@@ -2,7 +2,6 @@ $(function() {
   $("#userInput").submit(function(event) {
     event.preventDefault();
     let userInput = $("input#userInput").val();
-    console.log("userInput", userInput);
     // Check for empty field
     if (userInput === "") {
       $("#output").text("This field is required.");
@@ -13,9 +12,9 @@ $(function() {
     } else {
       //If non-empty and numerical, parse userInput
       let number = parseFloat(userInput);
-      console.log("number", number);
       let primes = sieve(number);
-      $("#output").text(primes);
+      let result = displayResults(primes);
+      $("#output").text(result);
     }
   });
 
@@ -49,4 +48,9 @@ $(function() {
     }
     return primes;
   } 
+
+  function displayResults(primes) {
+    let result = primes.join(', ');
+    return result;
+  }
 });
